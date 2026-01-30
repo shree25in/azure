@@ -1,0 +1,15 @@
+{
+	"name": "de-prac-001-ADF",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned,UserAssigned",
+		"principalId": "559431d9-bddb-41e6-b4df-a0d8de1a23b3",
+		"tenantId": "379d199f-0ccf-46a1-aa84-091089c2bd05",
+		"userAssignedIdentities": {
+			"/subscriptions/92320943-2c62-4ee2-b57c-c78907fa491b/resourcegroups/Rg1_de_prac-001/providers/Microsoft.ManagedIdentity/userAssignedIdentities/UAMI_prac-001": {
+				"clientId": "f2860513-2c3c-46e2-9c63-bff86617f68d",
+				"principalId": "746d6747-11ed-423e-82b2-b1886cd3782f"
+			}
+		}
+	}
+}
