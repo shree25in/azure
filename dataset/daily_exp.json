@@ -1,0 +1,24 @@
+{
+	"name": "daily_exp",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MySql1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"table": {
+				"type": "string",
+				"defaultValue": "daily_exp"
+			}
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@dataset().table",
+				"type": "Expression"
+			}
+		}
+	}
+}
