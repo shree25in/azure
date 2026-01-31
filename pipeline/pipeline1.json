@@ -152,8 +152,8 @@
 				]
 			},
 			{
-				"name": "Get Metadata",
-				"type": "GetMetadata",
+				"name": "MySQL",
+				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -162,12 +162,19 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
+				"userProperties": [],
 				"typeProperties": {
-					"dataset": {
-						"referenceName": "AzureSqlTable2",
-						"type": "DatasetReference"
+					"source": {
+						"type": "MySqlSource",
+						"query": "select max(id) from exptrk.daily_exp;"
 					},
-					"fieldList": []
+					"dataset": {
+						"referenceName": "daily_exp",
+						"type": "DatasetReference",
+						"parameters": {
+							"table": "daily_exp"
+						}
+					}
 				}
 			}
 		],
