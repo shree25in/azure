@@ -5,9 +5,14 @@
 			{
 				"name": "Copy Exp_data",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "MySQL",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -18,7 +23,11 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "MySqlSource"
+						"type": "MySqlSource",
+						"query": {
+							"value": "select * from exptrk.daily_exp where id > @{activity('MySQL').output}",
+							"type": "Expression"
+						}
 					},
 					"sink": {
 						"type": "AzureSqlSink",
