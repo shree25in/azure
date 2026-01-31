@@ -28,6 +28,104 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "id",
+									"type": "Int32",
+									"physicalType": "Int32"
+								},
+								"sink": {
+									"name": "id",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "date",
+									"type": "DateTime",
+									"physicalType": "Date"
+								},
+								"sink": {
+									"name": "date",
+									"type": "DateTime",
+									"physicalType": "datetime2"
+								}
+							},
+							{
+								"source": {
+									"name": "income",
+									"type": "Decimal",
+									"physicalType": "NewDecimal"
+								},
+								"sink": {
+									"name": "income",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "shop",
+									"type": "String",
+									"physicalType": "VarChar"
+								},
+								"sink": {
+									"name": "shop",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "item_type",
+									"type": "String",
+									"physicalType": "VarChar"
+								},
+								"sink": {
+									"name": "item_type",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "items",
+									"type": "String",
+									"physicalType": "VarChar"
+								},
+								"sink": {
+									"name": "items",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "bill_amount",
+									"type": "Decimal",
+									"physicalType": "NewDecimal"
+								},
+								"sink": {
+									"name": "bill_amount",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "comments",
+									"type": "String",
+									"physicalType": "VarChar"
+								},
+								"sink": {
+									"name": "comments",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
