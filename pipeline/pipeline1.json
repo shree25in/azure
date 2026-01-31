@@ -5,6 +5,8 @@
 			{
 				"name": "Copy Exp_data",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "MySQL",
@@ -174,15 +176,14 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "MySqlSource",
-						"query": "select max(id) from exptrk.daily_exp;"
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select max(id) from dbo.daily_exp",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "daily_exp",
-						"type": "DatasetReference",
-						"parameters": {
-							"table": "daily_exp"
-						}
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
 					}
 				}
 			}
