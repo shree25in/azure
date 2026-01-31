@@ -1,0 +1,55 @@
+{
+	"name": "AzureSqlTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Az_sqldb",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "date",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "income",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "shop",
+				"type": "nvarchar"
+			},
+			{
+				"name": "item_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "items",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bill_amount",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "comments",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "daily_exp"
+		}
+	}
+}
