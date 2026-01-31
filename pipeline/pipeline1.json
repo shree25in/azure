@@ -5,11 +5,9 @@
 			{
 				"name": "Copy Exp_data",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
-						"activity": "MySQL",
+						"activity": "AzSQL maxID",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -27,7 +25,7 @@
 					"source": {
 						"type": "MySqlSource",
 						"query": {
-							"value": "select * from exptrk.daily_exp where id > @{activity('MySQL').output}",
+							"value": "select * from exptrk.daily_exp where id > @{activity('AzSQL maxID').firstRow.maxID}",
 							"type": "Expression"
 						}
 					},
@@ -163,7 +161,7 @@
 				]
 			},
 			{
-				"name": "MySQL",
+				"name": "AzSQL maxID",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -177,7 +175,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select max(id) from dbo.daily_exp",
+						"sqlReaderQuery": "select max(id) as maxID from dbo.daily_exp",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
