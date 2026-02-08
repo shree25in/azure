@@ -1,0 +1,16 @@
+{
+	"name": "ds_ls_nsql_001",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azsql_adf_ls_001",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "daily_exp"
+		}
+	}
+}
