@@ -5,6 +5,8 @@
 			{
 				"name": "Copy Exp_data",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "AzSQL maxID",
@@ -22,13 +24,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "MySqlSource",
-						"query": {
-							"value": "select * from exptrk.daily_exp where id > @{activity('AzSQL maxID').output.firstRow.maxID}",
-							"type": "Expression"
-						}
-					},
 					"sink": {
 						"type": "AzureSqlSink",
 						"writeBehavior": "insert",
@@ -43,116 +38,86 @@
 							{
 								"source": {
 									"name": "id",
-									"type": "Int32",
-									"physicalType": "Int32"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "id",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "Int32"
 								}
 							},
 							{
 								"source": {
 									"name": "date",
-									"type": "DateTime",
-									"physicalType": "Date"
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "date",
-									"type": "DateTime",
-									"physicalType": "datetime2"
+									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
 									"name": "income",
-									"type": "Decimal",
-									"physicalType": "NewDecimal"
+									"type": "Decimal"
 								},
 								"sink": {
 									"name": "income",
-									"type": "Decimal",
-									"physicalType": "decimal"
+									"type": "Decimal"
 								}
 							},
 							{
 								"source": {
 									"name": "shop",
-									"type": "String",
-									"physicalType": "VarChar"
+									"type": "String"
 								},
 								"sink": {
 									"name": "shop",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "item_type",
-									"type": "String",
-									"physicalType": "VarChar"
+									"type": "String"
 								},
 								"sink": {
 									"name": "item_type",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "items",
-									"type": "String",
-									"physicalType": "VarChar"
+									"type": "String"
 								},
 								"sink": {
 									"name": "items",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "bill_amount",
-									"type": "Decimal",
-									"physicalType": "NewDecimal"
+									"type": "Decimal"
 								},
 								"sink": {
 									"name": "bill_amount",
-									"type": "Decimal",
-									"physicalType": "decimal"
+									"type": "Decimal"
 								}
 							},
 							{
 								"source": {
 									"name": "comments",
-									"type": "String",
-									"physicalType": "VarChar"
+									"type": "String"
 								},
 								"sink": {
 									"name": "comments",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "String"
 								}
 							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
+						]
 					}
 				},
-				"inputs": [
-					{
-						"referenceName": "daily_exp",
-						"type": "DatasetReference",
-						"parameters": {
-							"table": "daily_exp"
-						}
-					}
-				],
 				"outputs": [
 					{
 						"referenceName": "ds_ls_nsql_001",
@@ -174,14 +139,14 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select max(id) as maxID from dbo.daily_exp",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
+						"type": "MySqlSource"
 					},
 					"dataset": {
-						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
+						"referenceName": "daily_exp",
+						"type": "DatasetReference",
+						"parameters": {
+							"table": "daily_exp"
+						}
 					}
 				}
 			}
