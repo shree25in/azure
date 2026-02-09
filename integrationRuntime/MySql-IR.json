@@ -1,5 +1,5 @@
 {
-	"name": "MySQL-IR",
+	"name": "MySql-IR",
 	"properties": {
 		"type": "SelfHosted"
 	}
