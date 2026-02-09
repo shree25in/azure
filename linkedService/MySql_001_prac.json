@@ -1,5 +1,5 @@
 {
-	"name": "MySql1",
+	"name": "MySql_001_prac",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
@@ -12,10 +12,10 @@
 			"sslMode": 1,
 			"useSystemTrustStore": 0,
 			"driverVersion": "v2",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzNzRkODkyOS04MjBhLTQ0ODMtOTMwOC1mM2ZlNDEyMGNiMmEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyZmIxYmViMi0xNDYyLTRlOTktYTliMy05NzM5NjhhMmRkOTciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
-			"referenceName": "MySQL-IR",
+			"referenceName": "MySql-IR",
 			"type": "IntegrationRuntimeReference"
 		}
 	}

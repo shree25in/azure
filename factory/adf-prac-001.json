@@ -1,0 +1,9 @@
+{
+	"name": "adf-prac-001",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "cd91f9ab-fb77-418e-a010-354b5adf2816",
+		"tenantId": "379d199f-0ccf-46a1-aa84-091089c2bd05"
+	}
+}

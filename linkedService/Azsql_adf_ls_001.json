@@ -1,0 +1,18 @@
+{
+	"name": "Azsql_adf_ls_001",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "az-prac-ssrv-001.database.windows.net",
+			"database": "dailyexp",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "UserAssignedManagedIdentity",
+			"credential": {
+				"referenceName": "cred_uami_sql",
+				"type": "CredentialReference"
+			}
+		}
+	}
+}

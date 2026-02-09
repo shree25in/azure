@@ -2,7 +2,7 @@
 	"name": "daily_exp",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "MySql1",
+			"referenceName": "MySql_001_prac",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
